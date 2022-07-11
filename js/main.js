@@ -15,6 +15,9 @@ const computerChoice = document.getElementById('computer-choice');
 const playerWins = document.getElementById('player-won');
 const computerWins = document.getElementById('computer-won');
 
+const playerInfo = document.getElementById('player-info');
+const computerInfo = document.getElementById('computer-info');
+
 const resetBtn = document.getElementById('reset-btn');
 
 const roundStatus = document.getElementById('round-status');
@@ -148,6 +151,9 @@ function checkWin() {
 
         roundStatus.innerHTML = 'Player wins the round!';
 
+        playerInfo.style.backgroundColor = '#5AA329';
+        computerInfo.style.backgroundColor = '#DF2935';
+
     }
     if (playersPick == 'scissors' && computerPick == 'paper') {
 
@@ -155,12 +161,18 @@ function checkWin() {
 
         roundStatus.innerHTML = 'Player wins the round!';
 
+        playerInfo.style.backgroundColor = '#5AA329';
+        computerInfo.style.backgroundColor = '#DF2935';
+
     }
     if (playersPick == 'paper' && computerPick == 'rock') {
 
         playerScoreHTML.innerHTML = `Player: ${playerScore += 1}`;
 
         roundStatus.innerHTML = 'Player wins the round!';
+
+        playerInfo.style.backgroundColor = '#5AA329';
+        computerInfo.style.backgroundColor = '#DF2935';
 
     }
 
@@ -171,33 +183,51 @@ function checkWin() {
 
         roundStatus.innerHTML = 'Computer wins the round!';
 
+        computerInfo.style.backgroundColor = '#5AA329';
+        playerInfo.style.backgroundColor = '#DF2935';
+
     }
     if (playersPick == 'paper' && computerPick == 'scissors') {
 
         computerScoreHTML.innerHTML = `Computer: ${computerScore += 1}`;
 
         roundStatus.innerHTML = 'Computer wins the round!';
+
+        computerInfo.style.backgroundColor = '#5AA329';
+        playerInfo.style.backgroundColor = '#DF2935';
     }
     if (playersPick == 'rock' && computerPick == 'paper') {
 
         computerScoreHTML.innerHTML = `Computer: ${computerScore += 1}`;
 
         roundStatus.innerHTML = 'Computer wins the round!';
+
+        computerInfo.style.backgroundColor = '#5AA329';
+        playerInfo.style.backgroundColor = '#DF2935';
     }
 
     if (playersPick == 'rock' && computerPick == 'rock') {
 
         roundStatus.innerHTML = 'This round is a tie!';
 
+        computerInfo.style.backgroundColor = '#FFB20F';
+        playerInfo.style.backgroundColor = '#FFB20F';
+
     }
     if (playersPick == 'paper' && computerPick == 'paper') {
 
         roundStatus.innerHTML = 'This round is a tie!';
 
+        computerInfo.style.backgroundColor = '#FFB20F';
+        playerInfo.style.backgroundColor = '#FFB20F';
+
     }
     if (playersPick == 'scissors' && computerPick == 'scissors') {
 
         roundStatus.innerHTML = 'This round is a tie!';
+
+        computerInfo.style.backgroundColor = '#FFB20F';
+        playerInfo.style.backgroundColor = '#FFB20F';
 
     }
 
@@ -255,6 +285,9 @@ function resetGame() {
     playerWins.style.visibility = 'hidden';
     computerWins.style.visibility = 'hidden'
 
+    playerChoice.innerHTML = 'Player Chose:';
+    computerChoice.innerHTML = 'Computer Chose:';
+
     playerChose = false;
     computerChose = false;
 
@@ -262,6 +295,9 @@ function resetGame() {
     computerWon = false;
 
     resetBtn.style.visibility = 'hidden';
+
+    computerInfo.style.backgroundColor = '';
+    playerInfo.style.backgroundColor = '';
 
     roundStatus.innerHTML = '';
 }
