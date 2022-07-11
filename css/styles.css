@@ -43,12 +43,37 @@ body {
 #player-score,
 #player-choice,
 #computer-score,
-#computer-choice {
+#computer-choice,
+#player-won,
+#computer-won {
 
     color: white;
     font-size: 30px;
     margin: 0 10px;
 
+
+}
+
+.won-wrapper {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+}
+
+#player-won,
+#computer-won {
+
+
+    text-align: center;
+    color: rgb(8, 91, 8);
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 10px;
+    background-color: rgb(142, 255, 142);
+    border: 3px solid rgb(8, 91, 8);
+    border-radius: 5px;
 
 }
 
@@ -97,4 +122,35 @@ h2 {
     text-align: center;
     font-size: 55px;
 
+}
+
+.reset-wrapper {
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+
+}
+
+#reset-btn {
+
+    width: 25%;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: rgb(7, 7, 7);
+    background-color: rgb(0, 255, 200);
+    transition: all 0.2s ease-in-out;
+
+}
+
+#reset-btn:hover {
+
+    background-color: rgba(0, 255, 200, 0.3);
+    color: white;
 }

@@ -12,11 +12,24 @@ const computerScoreHTML = document.getElementById('computer-score');
 const playerChoice = document.getElementById('player-choice');
 const computerChoice = document.getElementById('computer-choice');
 
+const playerWins = document.getElementById('player-won');
+const computerWins = document.getElementById('computer-won');
+
+const resetBtn = document.getElementById('reset-btn');
+
+playerWins.style.visibility = 'hidden';
+computerWins.style.visibility = 'hidden'
+
+resetBtn.style.visibility = 'hidden';
+
 let playerScore = 0;
 let computerScore = 0;
 
 let playerChose = false;
 let computerChose = false;
+
+let playerWon = false;
+let computerWon = false;
 
 let playersPick;
 let computerPick;
@@ -86,6 +99,7 @@ function getPlayerChoice(choice) {
         playerChoice.innerHTML = `Player Chose: Rock`;
         playerChose = true;
 
+
     }
     if (choice == 'paper') {
 
@@ -99,7 +113,6 @@ function getPlayerChoice(choice) {
         playersPick = 'scissors';
         playerChoice.innerHTML = `Player Chose: Scissors`;
         playerChose = true;
-
 
     }
 
@@ -176,11 +189,70 @@ function checkWin() {
 
     }
 
+    if (playerScore == 5) {
+
+        playerWon = true;
+
+    } else if (computerScore == 5) {
+
+        computerWon = true;
+
+    }
+
+    if (playerWon == true) {
+
+        playerWins.style.visibility = 'visible';
+
+        playerWins.innerHTML = 'Player Wins!';
+
+        clearUI();
+
+        resetBtn.style.visibility = 'visible';
+
+    } else if (computerWon == true) {
+
+        computerWins.style.visibility = 'visible'
+
+        computerWins.innerHTML = 'Computer Wins!'
+
+        clearUI();
+
+        resetBtn.style.visibility = 'visible';
+
+    }
 
 
 
 
 }
+
+function resetGame() {
+
+    clearUI();
+
+    playerScore = 0;
+    computerScore = 0;
+
+    playerScoreHTML.innerHTML = `Player: ${playerScore}`;
+    computerScoreHTML.innerHTML = `Computer: ${computerScore}`
+
+    playerWins.style.visibility = 'hidden';
+    computerWins.style.visibility = 'hidden'
+
+    playerChose = false;
+    computerChose = false;
+
+    playerWon = false;
+    computerWon = false;
+
+    resetBtn.style.visibility = 'hidden';
+}
+
+resetBtn.addEventListener('click', () => {
+
+    resetGame();
+
+});
 
 
 
