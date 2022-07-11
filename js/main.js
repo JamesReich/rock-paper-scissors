@@ -234,10 +234,16 @@ function checkWin() {
     if (playerScore == 5) {
 
         playerWon = true;
+        rock.classList.add('disabled');
+        paper.classList.add('disabled');
+        scissors.classList.add('disabled');
 
     } else if (computerScore == 5) {
 
         computerWon = true;
+        rock.classList.add('disabled');
+        paper.classList.add('disabled');
+        scissors.classList.add('disabled');
 
     }
 
@@ -300,6 +306,10 @@ function resetGame() {
     playerInfo.style.backgroundColor = '';
 
     roundStatus.innerHTML = '';
+
+    rock.classList.remove('disabled');
+    paper.classList.remove('disabled');
+    scissors.classList.remove('disabled');
 }
 
 resetBtn.addEventListener('click', () => {
