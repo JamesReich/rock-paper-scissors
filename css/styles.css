@@ -2,11 +2,20 @@
 
     box-sizing: border-box;
 
+
+}
+
+html {
+
+
+    font-family: 'Lato', sans-serif;
+
 }
 
 body {
 
     background-color: rgb(0, 5, 6);
+
 
 }
 
@@ -124,13 +133,21 @@ h2 {
 
 }
 
-.reset-wrapper {
+.reset-wrapper,
+.round-wrapper {
 
     width: 100%;
     display: flex;
     justify-content: center;
     align-content: center;
     margin-top: 50px;
+
+}
+
+#round-status {
+
+    color: white;
+    font-size: 45px;
 
 }
 

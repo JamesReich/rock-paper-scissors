@@ -17,6 +17,8 @@ const computerWins = document.getElementById('computer-won');
 
 const resetBtn = document.getElementById('reset-btn');
 
+const roundStatus = document.getElementById('round-status');
+
 playerWins.style.visibility = 'hidden';
 computerWins.style.visibility = 'hidden'
 
@@ -144,15 +146,21 @@ function checkWin() {
 
         playerScoreHTML.innerHTML = `Player: ${playerScore += 1}`;
 
+        roundStatus.innerHTML = 'Player wins the round!';
+
     }
     if (playersPick == 'scissors' && computerPick == 'paper') {
 
         playerScoreHTML.innerHTML = `Player: ${playerScore += 1}`;
 
+        roundStatus.innerHTML = 'Player wins the round!';
+
     }
     if (playersPick == 'paper' && computerPick == 'rock') {
 
         playerScoreHTML.innerHTML = `Player: ${playerScore += 1}`;
+
+        roundStatus.innerHTML = 'Player wins the round!';
 
     }
 
@@ -161,31 +169,35 @@ function checkWin() {
 
         computerScoreHTML.innerHTML = `Computer: ${computerScore += 1}`;
 
+        roundStatus.innerHTML = 'Computer wins the round!';
+
     }
     if (playersPick == 'paper' && computerPick == 'scissors') {
 
         computerScoreHTML.innerHTML = `Computer: ${computerScore += 1}`;
 
+        roundStatus.innerHTML = 'Computer wins the round!';
     }
     if (playersPick == 'rock' && computerPick == 'paper') {
 
         computerScoreHTML.innerHTML = `Computer: ${computerScore += 1}`;
 
+        roundStatus.innerHTML = 'Computer wins the round!';
     }
 
     if (playersPick == 'rock' && computerPick == 'rock') {
 
-
+        roundStatus.innerHTML = 'This round is a tie!';
 
     }
     if (playersPick == 'paper' && computerPick == 'paper') {
 
-
+        roundStatus.innerHTML = 'This round is a tie!';
 
     }
     if (playersPick == 'scissors' && computerPick == 'scissors') {
 
-
+        roundStatus.innerHTML = 'This round is a tie!';
 
     }
 
@@ -205,6 +217,8 @@ function checkWin() {
 
         playerWins.innerHTML = 'Player Wins!';
 
+        roundStatus.innerHTML = 'Player wins the Game!';
+
         clearUI();
 
         resetBtn.style.visibility = 'visible';
@@ -214,6 +228,8 @@ function checkWin() {
         computerWins.style.visibility = 'visible'
 
         computerWins.innerHTML = 'Computer Wins!'
+
+        roundStatus.innerHTML = 'Computer wins the Game!';
 
         clearUI();
 
@@ -246,6 +262,8 @@ function resetGame() {
     computerWon = false;
 
     resetBtn.style.visibility = 'hidden';
+
+    roundStatus.innerHTML = '';
 }
 
 resetBtn.addEventListener('click', () => {
